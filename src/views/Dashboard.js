@@ -1,25 +1,19 @@
 import React from "react";
-import { Grid, Segment } from "semantic-ui-react";
+import { Segment, Image } from "semantic-ui-react";
 import styled from "styled-components";
 
 import StockTable from "../components/StockTable";
 import NewWebSocket from "../components/NewWebSocket";
+import UppstocksLogo from "../assets/Uppstocks.png";
 
 const Dashboard = () => {
   return (
-    <div>
-      <StyledSegment>
-        <Grid>
-          <Grid.Row>
-            <Grid.Column>
-              <NewWebSocket>
-                <StockTable />
-              </NewWebSocket>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </StyledSegment>
-    </div>
+    <StyledSegment textAlign="center">
+      <Image src={UppstocksLogo} size="tiny" centered />
+      <NewWebSocket>
+        <StockTable />
+      </NewWebSocket>
+    </StyledSegment>
   );
 };
 
@@ -27,4 +21,5 @@ export default Dashboard;
 
 const StyledSegment = styled(Segment)`
   background: ${(props) => props.theme.secondary} !important;
+  min-height: 100% !important;
 `;

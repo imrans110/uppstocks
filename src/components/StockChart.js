@@ -39,4 +39,4 @@ const StockChart = ({ stockDetails }) => (
   </>
 );
 
-export default React.memo(StockChart);
+export default StockChart;
